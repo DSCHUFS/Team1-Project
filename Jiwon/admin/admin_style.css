@@ -1,0 +1,61 @@
+/*Selector {
+	Property: value;
+}*/
+.navbar-expand-lg{
+	background-color: #FFF1BC;
+}
+.navbar-brand{
+	color: black;
+}
+.nav-link{
+	color: black;
+
+}
+section{
+	overflow: hidden;
+}
+
+.leftside {
+	width: 50%;
+	height: 500px;
+	float: left;
+}
+.rightside{
+	width: 50%;
+	height: 500px;
+	float: left;
+	position: relative;
+}
+.main_image{
+	width: 500px;
+	margin: 100px;
+	border-radius: 20px;
+}
+.main{
+	margin:auto;
+	position: relative;
+}
+.main_name{
+	position: absolute;
+	top:130px;
+	left: 50%;
+	transform: translate(-50%);
+}
+.administrator{
+	position: absolute;
+	top: 180px;
+	left: 50%;
+	transform: translate(-50%);
+}
+.button_up{
+	position: absolute;
+	top: 250px;
+	left: 50%;
+	transform: translate(-50%);
+}
+.button_down{
+	position: absolute;
+	top: 320px;
+	left: 50%;
+	transform: translate(-50%);
+}
