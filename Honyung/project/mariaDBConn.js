@@ -6,12 +6,12 @@ const pool = mariadb.createPool({
     connectionLimit: 5
 });
  
-async function GetUserList(){
+async function GetSearchList(param){
     let conn, rows;
     try{
         conn = await pool.getConnection();
         conn.query('USE nodejs_test');
-        rows = await conn.query('SELECT * FROM users');
+        rows = await conn.query('SELECT user_id FROM users where user_key ==' + param);
     }
     catch(err){
         throw err;
@@ -23,5 +23,5 @@ async function GetUserList(){
 }
  
 module.exports = {
-    getUserList: GetUserList
+    getSearchList: GetSearchList
 }
