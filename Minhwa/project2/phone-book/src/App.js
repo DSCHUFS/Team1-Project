@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
+//import { Link } from 'react-router-dom' //****
+//import Button from '@material-ui/core/Button';
 
 class Subject extends Component {
   render () {
     return(
       <header>
         <h1 className="titletext">{this.props.title}</h1>
-        {this.props.sub}
       </header>
     );
   }
 }
+
+class Logo extends Component {
+  render () {
+    return(
+      <header>
+        <h1 className="logo">Recycle Allimi</h1>
+      </header>
+    );
+  }
+}
+
 
 class Variety extends Component {
   render () {
@@ -59,7 +71,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Subject title="전등" sub="전등 분리배출법을 알아봅시다"></Subject>
+        <Logo></Logo>
+        <Subject title="전등"></Subject>
         <Variety></Variety>
         <Varietytext></Varietytext>
         <Howto></Howto>
