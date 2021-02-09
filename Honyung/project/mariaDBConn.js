@@ -18,10 +18,11 @@ async function GetSearchList(param){
     }
     finally{
         if (conn) conn.end();
+        console.log(rows[0]);
         return rows[0];
     }
 }
  
 module.exports = {
-    getSearchList: GetSearchList
+    GetSearchList: GetSearchList
 }
