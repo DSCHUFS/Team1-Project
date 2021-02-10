@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './detailPage.css';
-import { Link } from 'react-router-dom'
-import Button from '@material-ui/core/Button';
+import '../css/Detail.css';
+//import { Link } from 'react-router-dom' //****
+//import Button from '@material-ui/core/Button';
 
 class Subject extends Component {
   render () {
@@ -23,6 +23,7 @@ class Logo extends Component {
   }
 }
 
+
 class Variety extends Component {
   render () {
     return(
@@ -33,15 +34,17 @@ class Variety extends Component {
   }
 }
 
+
 class Varietytext extends Component {
   render () {
     return(
       <div>
-        <div className="text">형광등 전등 유리등 등등...</div>
+        <div className="text">{this.props.title}.</div>
       </div>
     );
   }
 }
+
 
 class Howto extends Component {
   render () {
@@ -57,25 +60,26 @@ class Howtotext extends Component {
   render () {
     return(
       <div>
-        <div className="text">내용물을 잘 씻는다</div>
+        <div className="text">{this.props.title}</div>
       </div>
     );
   }
 }
 
-class DetailPage extends Component {
+
+class Lamp extends Component {
   render() {
     return (
       <div className="App">
         <Logo></Logo>
-        <Subject title="전등"></Subject>
+        <Subject title="형광등"></Subject>
         <Variety></Variety>
-        <Varietytext></Varietytext>
+        <Varietytext title="형광등, 심파장전구, 기타 수은을 함유한 조명제품"></Varietytext>
         <Howto></Howto>
-        <Howtotext></Howtotext>
+        <Howtotext title="깨지지 않게 주요거점(동주민센터, 아파트, 주택가골목 등) 폐형광등 전용수거함에 배출"></Howtotext>
       </div>
     );
   }
 }
 
-export default DetailPage;
+export default Lamp;

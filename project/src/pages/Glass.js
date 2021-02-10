@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../css/Detail.css';
 //import { Link } from 'react-router-dom' //****
 //import Button from '@material-ui/core/Button';
 
@@ -67,19 +67,19 @@ class Howtotext extends Component {
 }
 
 
-class Usedproduct extends Component {
+class Glass extends Component {
   render() {
     return (
       <div className="App">
         <Logo></Logo>
-        <Subject title="폐전자제품"></Subject>
+        <Subject title="유리병류"></Subject>
         <Variety></Variety>
-        <Varietytext title="세탁기, 에어컨 냉장고 티비 등 대형가전"></Varietytext>
+        <Varietytext title="음료수병, 기타병류"></Varietytext>
         <Howto></Howto>
-        <Howtotext title="대형가전 방문수거 서비스를 이용해 배출"></Howtotext>
+        <Howtotext title="병뚜껑을 제거한 후 내용물을 비우고 배출"></Howtotext>
       </div>
     );
   }
 }
 
-export default Usedproduct;
+export default Glass;
