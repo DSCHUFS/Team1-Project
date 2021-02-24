@@ -23,8 +23,28 @@ function Main() {
 
   const handleChange = useCallback((e) => {
     setSearch(e.target.value);
-    console.log(e.target.value);
     }, []);
+
+  const onSubmit = () => {
+   /* const textbox = {
+      inText : this.state.text,
+    };
+    fetch("http://localhost:3001/text", {
+      method: "post", //통신방법
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(textbox),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        this.setState({
+          text: json.text,
+        });
+      });*/
+      alert('A name was submitted: ' + this.state.value);  
+  };
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -69,8 +89,9 @@ function Main() {
     <div style={{ textAlign: `center` }}>
       <h1>Recycling Allimi</h1>
       <h3>분리배출 할 물품을 검색해보세요.</h3>
-      <Paper component="form" className={classes.root}>
+      <Paper component="form" className={classes.root} action = 'http://localhost:3001/query' method = "get">
         <InputBase
+          name = 'name'
           className={classes.input}
           placeholder="#볼펜 #햇반용기 #맥주병"
           inputProps={{ 'aria-label': '#볼펜 #햇반용기 #맥주병' }}
