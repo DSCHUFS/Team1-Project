@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Paper, InputBase, IconButton, Button } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import { green } from "@material-ui/core/colors";
+import Navbar from '../component/Navbar'
 
 function Search() {
     // eslint-disable-next-line
@@ -46,7 +47,7 @@ function Search() {
 
     return(
     <div style={{ textAlign: `center` }}>
-      <h1>Recycling Allimi</h1>
+      <Navbar/>
       <h3>분리배출 할 물품을 검색해보세요.</h3>
       <Paper component="form" className={classes.root}>
         <InputBase

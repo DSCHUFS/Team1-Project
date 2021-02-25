@@ -12,10 +12,10 @@ import PlasticBagImg from '../images/plastic-bag.png';
 import PlasticImg from '../images/plastic.png';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typography } from "@material-ui/core"
-import { Paper, InputBase, IconButton } from "@material-ui/core";
-import { Grid } from "@material-ui/core";
-import SearchIcon from "@material-ui/icons/Search";
+import { Paper, InputBase, IconButton, Grid } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
+import SearchIcon from "@material-ui/icons/Search";
+import Navbar from '../component/Navbar'
 
 function Main() {
   // eslint-disable-next-line
@@ -23,28 +23,8 @@ function Main() {
 
   const handleChange = useCallback((e) => {
     setSearch(e.target.value);
+    console.log(e.target.value);
     }, []);
-
-  const onSubmit = () => {
-   /* const textbox = {
-      inText : this.state.text,
-    };
-    fetch("http://localhost:3001/text", {
-      method: "post", //통신방법
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(textbox),
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-        this.setState({
-          text: json.text,
-        });
-      });*/
-      alert('A name was submitted: ' + this.state.value);  
-  };
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -70,7 +50,9 @@ function Main() {
       backgroundColor: green[50],
     },
     button: {
-      marginBottom: '50px',
+      //marginBottom: '50px',
+      padding: '8px',
+      marginLeft: '50px',
       backgroundColor: green[500],
     },
     grid: {
@@ -87,11 +69,10 @@ function Main() {
 
   return (
     <div style={{ textAlign: `center` }}>
-      <h1>Recycling Allimi</h1>
+      <Navbar/>
       <h3>분리배출 할 물품을 검색해보세요.</h3>
-      <Paper component="form" className={classes.root} action = 'http://localhost:3001/query' method = "get">
+      <Paper component="form" className={classes.root}>
         <InputBase
-          name = 'name'
           className={classes.input}
           placeholder="#볼펜 #햇반용기 #맥주병"
           inputProps={{ 'aria-label': '#볼펜 #햇반용기 #맥주병' }}
@@ -102,7 +83,7 @@ function Main() {
         </IconButton>
       </Paper>
 
-      <h3>분리배출 꿀팁을 알아보고 싶다면?</h3>
+      <font size="5" padding="8px">분리배출 꿀팁을 알아보고 싶다면 <span>👉</span></font>
       <Link to="/search" style={{ textDecoration: 'none' }}><Button variant="contained" className={classes.button}>헷갈리기 쉬운 분리배출 품목</Button></Link>
       
       <h3>종류별로 찾아보세요!</h3>
