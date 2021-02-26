@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Paper, InputBase, IconButton, Button } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import { green } from "@material-ui/core/colors";
-import Navbar from '../component/Navbar'
+import Navbar from './Navbar'
 
 function Search() {
     // eslint-disable-next-line
