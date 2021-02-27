@@ -63,7 +63,7 @@ function Search() {
 
       <h3>헷갈리기 쉬운 분리배출 품목</h3>
       <h4>ㄱㄴㄷ순</h4>
-      <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">게 껍데기</Button></Link>
+      <Link to='/etc' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">게 껍데기</Button></Link>
       <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">나무젓가락</Button></Link>
       <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">도자기류</Button></Link>
       <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">옥수수 껍질</Button></Link>

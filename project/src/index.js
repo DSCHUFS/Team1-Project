@@ -12,6 +12,7 @@ import Paper from './pages/Paper';
 import PaperCup from './pages/PaperCup';
 import Plastic from './pages/Plastic';
 import PlasticBag from './pages/PlasticBag';
+import Etc from './pages/Etc';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -29,6 +30,7 @@ ReactDOM.render(
     <Route exact path="/paper-cup" component={PaperCup} />
     <Route exact path="/plastic" component={Plastic} />
     <Route exact path="/plastic-bag" component={PlasticBag} />    
+    <Route exact path="/etc" component={Etc} />    
   </BrowserRouter>,
   document.getElementById('root')
 );
