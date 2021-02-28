@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../css/Detail.css';
 //import { Link } from 'react-router-dom' //****
 //import Button from '@material-ui/core/Button';
 
@@ -67,19 +67,19 @@ class Howtotext extends Component {
 }
 
 
-class Vinyl extends Component {
+class Paper extends Component {
   render() {
     return (
       <div className="App">
         <Logo></Logo>
-        <Subject title="비닐류"></Subject>
+        <Subject title="종이"></Subject>
         <Variety></Variety>
-        <Varietytext title="과자, 라면봉지, 1회용 비닐봉투 등"></Varietytext>
+        <Varietytext title="신문지, 전단지, 종이박스, 책자, 노트 등"></Varietytext>
         <Howto></Howto>
-        <Howtotext title="투명 비닐봉투에 넣어서 배출/음식물 등 이물질이 묻은 경우에는 깨끗이 씻어서 배출"></Howtotext>
+        <Howtotext title="물기에 젖지 않게 박스류에 담아서 배출."></Howtotext>
       </div>
     );
   }
 }
 
-export default Vinyl;
+export default Paper;
