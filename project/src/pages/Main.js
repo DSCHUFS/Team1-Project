@@ -15,7 +15,7 @@ import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typo
 import { Paper, InputBase, IconButton, Grid } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
 import SearchIcon from "@material-ui/icons/Search";
-import Navbar from './Navbar'
+import Navbar from '../components/Navbar'
 
 function Main() {
   // eslint-disable-next-line
@@ -50,7 +50,6 @@ function Main() {
       backgroundColor: green[50],
     },
     button: {
-      //marginBottom: '50px',
       padding: '8px',
       marginLeft: '50px',
       backgroundColor: green[500],

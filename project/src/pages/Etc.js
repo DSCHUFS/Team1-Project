@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@material-ui/core";
-import Navbar from './Navbar'
+import Navbar from '../components/Navbar'
 
 function Etc() {
     const useStyles = makeStyles({
@@ -53,20 +53,20 @@ function Etc() {
         </TableHead>
         <TableBody>
             <TableRow>
-                <TableCell className={classes.tableCell1} style={{backgroundColor:'#D3D3D3'}}>이미지</TableCell>
-                <TableCell className={classes.tableCell2} style={{backgroundColor:'#D3D3D3'}}>{datas[0].img}</TableCell>
+                <TableCell className={classes.tableCell1} >이미지</TableCell>
+                <TableCell className={classes.tableCell2} >{datas[0].img}</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell className={classes.tableCell1} style={{backgroundColor:'#8AAE92'}}>제품명</TableCell>
-                <TableCell className={classes.tableCell2} style={{backgroundColor:'#8AAE92'}}>{datas[0].item}</TableCell>
+                <TableCell className={classes.tableCell1} >제품명</TableCell>
+                <TableCell className={classes.tableCell2} >{datas[0].item}</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell className={classes.tableCell1} style={{backgroundColor:'#D3D3D3'}}>분리수거가능여부</TableCell>
-                <TableCell className={classes.tableCell2} style={{backgroundColor:'#D3D3D3'}}>{datas[0].isPossible}</TableCell>
+                <TableCell className={classes.tableCell1} >분리수거가능여부</TableCell>
+                <TableCell className={classes.tableCell2} >{datas[0].isPossible}</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell className={classes.tableCell1} style={{backgroundColor:'#8AAE92'}}>비고</TableCell>
-                <TableCell className={classes.tableCell2} style={{backgroundColor:'#8AAE92'}}>{datas[0].explain}</TableCell>
+                <TableCell className={classes.tableCell1} >비고</TableCell>
+                <TableCell className={classes.tableCell2} >{datas[0].explain}</TableCell>
             </TableRow>
         </TableBody>
         </Table>
