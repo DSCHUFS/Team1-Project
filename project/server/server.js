@@ -25,8 +25,9 @@ app.get('/query', function(req,res) {
     const name = req.param('name');
     connection.query("SELECT * FROM main where item = " + "'" + name + "'", function (err, rows, fields) {
         if (err) {
+          res.redirect('http://localhost:3000/search/1');
           console.log(err);
-          res.redirect('http://localhost:3000/search');
+          throw err;
         } else {
           if(rows[0].class == '종이류')
             res.redirect('http://localhost:3000/paper');
