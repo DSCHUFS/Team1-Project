@@ -1,17 +1,3 @@
--- --------------------------------------------------------
--- 호스트:                          127.0.0.1
--- 서버 버전:                        10.5.8-MariaDB - mariadb.org binary distribution
--- 서버 OS:                        Win64
--- HeidiSQL 버전:                  11.0.0.5919
--- --------------------------------------------------------
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
-
 -- recycle_allimi 데이터베이스 구조 내보내기
 DROP DATABASE IF EXISTS `recycle_allimi`;
 CREATE DATABASE IF NOT EXISTS `recycle_allimi` /*!40100 DEFAULT CHARACTER SET latin1 */;
@@ -26,8 +12,6 @@ CREATE TABLE IF NOT EXISTS `main` (
   `explain` text NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=euckr;
 
--- 테이블 데이터 recycle_allimi.main:~123 rows (대략적) 내보내기
-/*!40000 ALTER TABLE `main` DISABLE KEYS */;
 INSERT INTO `main` (`class`, `item`, `isPossible`, `explain`) VALUES
 	('종이류', '신문지', 1, '종이류'),
 	('종이류', '책자, 노트, 전단지, 쇼핑백, 달력, 포장지 등', 1, '종이류'),
@@ -152,8 +136,3 @@ INSERT INTO `main` (`class`, `item`, `isPossible`, `explain`) VALUES
 	('기타\r\n', '폐의약품\r\n', 0, '가까운 약국으로 가져가 사용가능한 의약품은 약사의 복약지도를 받고 사용 불가능한 의약품은 보건소와 구청에서 안전하게 회수하여 폐기함\r\n'),
 	('기타\r\n', '페인트통', 0, '남은 페인트를 굳혀 특수규격마대(불연물질)를 구매 후 배출 ※특수규격마대 구입처: 구 지정 판매처(동주민센터, 편의점 등)'),
 	('기타', '연탄재\r\n', 0, '투명비닐봉투에 담아 배출\r\n');
-/*!40000 ALTER TABLE `main` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
