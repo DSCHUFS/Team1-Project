@@ -20,6 +20,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Route path='/' component={Main} exact/>
     <Route exact path="/search" component={Search} />
+    <Route path = "/search/:state" component = {Search} />
     {/* <Route exact path="/battery" component={Battery} /> */}
     <Route exact path="/can" component={Can} />
     {/* <Route exact path="/electronics" component={Electronics} /> */}
