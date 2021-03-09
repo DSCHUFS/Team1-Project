@@ -24,7 +24,7 @@ app.get('/',function(req,res) {
 app.get('/query', function(req,res) {
     const name = req.param('name');
     connection.query("SELECT * FROM main where item = " + "'" + name + "'", function (err, rows, fields) {
-        if (rows[0] == null) {
+        if (rows[0] == null || rows[0] == undefined) {
           res.redirect('http://localhost:3000/search/1');
         } else {
           if(rows[0].class == '종이류')
@@ -55,6 +55,17 @@ app.get('/query', function(req,res) {
     console.log(name);
     });
 });
+app.get('/all',function(req,res) {
+  connection.query("SELECT item FROM main", function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "X-Requested-With");
+      res.send(JSON.stringify(rows));            
+    }
+  });
+});
 app.listen(port, ()=>{
     console.log(`express is running on ${port}`);
-})
+});
