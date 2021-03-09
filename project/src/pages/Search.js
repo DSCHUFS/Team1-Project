@@ -7,34 +7,34 @@ import { green } from "@material-ui/core/colors";
 import Navbar from '../components/Navbar'
 import axios from 'axios';
 
+function Data({items}){
+  return (
+  <>
+  {
+    items.map((item,index) => (
+      <Link to='/etc' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">{items[index].item}</Button></Link>
+    ))
+  }
+  </>
+  );
+}
+
 const Search = ({match}) => {
     // eslint-disable-next-line
     const [search, setSearch] = useState("")
+    var [items, setItems] = useState(null)
 
     const handleChange = useCallback((e) => {
     setSearch(e.target.value);
-    console.log(e.target.value);
     }, []);
 
-    var items;
-
     useEffect(() => {
-      const getData = async() => {
-        try {
-          axios.get('http://localhost:3001/all').then((Response)=>{
-            items = Response.data;
-            console.log(items);
-            }).catch((Error)=>{
-            console.log(Error);
-            })
-        } catch (e) {
-        }
-      };
-      getData();
-    },items);
-    
-
-    console.log(items);
+      axios.get('http://localhost:3001/all').then((Response)=>{
+          setItems(items = Response.data);
+          }).catch((Error)=>{
+          console.log(Error);
+        })
+    },[]);
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -84,12 +84,10 @@ const Search = ({match}) => {
           <SearchIcon />
         </IconButton>
       </Paper>
-
           <h2>검색 결과가 존재하지 않습니다.</h2>
-
           <h3>헷갈리기 쉬운 분리배출 품목</h3>
           <h4>ㄱㄴㄷ순</h4>
-          <Link to='/etc' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">사랑과 행복</Button></Link>
+          {items && <Data items={items}/>}
         </div>
         );
     } else {
@@ -109,14 +107,9 @@ const Search = ({match}) => {
           <SearchIcon />
         </IconButton>
       </Paper>
-
           <h3>헷갈리기 쉬운 분리배출 품목</h3>
           <h4>ㄱㄴㄷ순</h4>
-          <Link to='/etc' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">게 껍데기</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">나무젓가락</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">도자기류</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">옥수수 껍질</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">전기 담요</Button></Link>
+          {items && <Data items={items}/>}        
         </div>
         );
     }
