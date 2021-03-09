@@ -7,22 +7,10 @@ import { green } from "@material-ui/core/colors";
 import Navbar from '../components/Navbar'
 import axios from 'axios';
 
-function Data({items}){
-  return (
-  <>
-  {
-    items.map((item) => (
-      <Link to={item.link} style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">{item.item}</Button></Link>
-    ))
-  }
-  </>
-  );
-}
-
 const Search = ({match}) => {
     // eslint-disable-next-line
     const [search, setSearch] = useState("")
-    var [items, setItems] = useState(null)
+    let [items, setItems] = useState(null)
     const handleChange = useCallback((e) => {
     setSearch(e.target.value);
     }, []);
@@ -34,6 +22,20 @@ const Search = ({match}) => {
           console.log(Error);
         })
     },[]);
+
+    function Data({items}){
+      items.sort(function(a, b) {
+        return a.item < b.item ? -1 : a.item > b.item ? 1 : 0;
+      })
+
+      return (    
+      <>{
+        items.map((item,index) => (
+          <Link to='/etc' style={{ textDecoration: 'none' }}><Button variant="outlined" className={classes.button} size="large">{items[index].item}</Button></Link>
+        ))
+      }</>
+      );
+    }
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -60,6 +62,12 @@ const Search = ({match}) => {
           padding: theme.spacing(2),
           textAlign: 'center',
           color: theme.palette.text.secondary,
+        },
+        button: {
+          padding: '5px',
+          margin: '2px',
+          border: '1px solid',
+          borderColor: green[500],
         },
       }));
     
