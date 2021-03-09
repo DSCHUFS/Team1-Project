@@ -56,7 +56,7 @@ app.get('/query', function(req,res) {
     });
 });
 app.get('/all',function(req,res) {
-  connection.query("SELECT item FROM main", function (err, rows, fields) {
+  connection.query("SELECT item , link FROM main", function (err, rows, fields) {
     if (err) {
       console.log(err);
     } else {
@@ -65,6 +65,22 @@ app.get('/all',function(req,res) {
       res.send(JSON.stringify(rows));            
     }
   });
+});
+app.get('/etc', function(req,res) {
+  var item = req.param('item');
+  //console.log(item+'입니다');
+  console.log(item);
+  connection.query("SELECT * FROM main where item=?", [item]  , function (err, rows, fields) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "X-Requested-With");
+      res.send(JSON.stringify(rows));
+      console.log('결과')
+      console.log(rows);          
+    }
+  });  
 });
 app.listen(port, ()=>{
     console.log(`express is running on ${port}`);
