@@ -1,19 +1,39 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Paper, InputBase, IconButton, Button } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import { green } from "@material-ui/core/colors";
 import Navbar from '../components/Navbar'
+import axios from 'axios';
+
+function Data({items}){
+  return (
+  <>
+  {
+    items.map((item) => (
+      <Link to={item.link} style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">{item.item}</Button></Link>
+    ))
+  }
+  </>
+  );
+}
 
 const Search = ({match}) => {
     // eslint-disable-next-line
     const [search, setSearch] = useState("")
-
+    var [items, setItems] = useState(null)
     const handleChange = useCallback((e) => {
     setSearch(e.target.value);
-    console.log(e.target.value);
     }, []);
+
+    useEffect(() => {
+      axios.get('http://localhost:3001/all').then((Response)=>{
+          setItems(items = Response.data);
+          }).catch((Error)=>{
+          console.log(Error);
+        })
+    },[]);
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -45,7 +65,6 @@ const Search = ({match}) => {
     
     const classes = useStyles(); 
     var result;
-
     if(match.params.state == 1)
     {
       result = (
@@ -64,16 +83,9 @@ const Search = ({match}) => {
           <SearchIcon />
         </IconButton>
       </Paper>
-
           <h2>검색 결과가 존재하지 않습니다.</h2>
-
           <h3>헷갈리기 쉬운 분리배출 품목</h3>
-          <h4>ㄱㄴㄷ순</h4>
-          <Link to='/etc' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">게 껍데기</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">나무젓가락</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">도자기류</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">옥수수 껍질</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">전기 담요</Button></Link>
+          {items && <Data items={items}/>}
         </div>
         );
     } else {
@@ -93,14 +105,8 @@ const Search = ({match}) => {
           <SearchIcon />
         </IconButton>
       </Paper>
-
           <h3>헷갈리기 쉬운 분리배출 품목</h3>
-          <h4>ㄱㄴㄷ순</h4>
-          <Link to='/etc' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">게 껍데기</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">나무젓가락</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">도자기류</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">옥수수 껍질</Button></Link>
-          <Link to='/' style={{ textDecoration: 'none' }}><Button variant="outlined" color="primary" size="large">전기 담요</Button></Link>
+          {items && <Data items={items}/>}        
         </div>
         );
     }

@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@material-ui/core";
 import Navbar from '../components/Navbar'
+import axios from 'axios';
 
-function Etc() {
+function Data({item}){
+    console.log(item)
     const useStyles = makeStyles({
         table: {
             minWidth: 650,
             textAlign: 'center',
             border: '5px solid green',
-
         },
         tableCon: {
             maxWidth: 1000,
@@ -25,21 +26,12 @@ function Etc() {
             padding: '20px'
         }
     });
-
-    function createData(item, img, isPossible, explain) {
-        return { item, img, isPossible, explain};
-    }
-
-    const datas = [
-        createData('종이 핸드타월', 'img', 'x', '이물질이 묻어있을 경우 재활용이 안되므로 일반 종량제 봉투에 버려야함'),
-    ];
-
     const classes = useStyles();
 
     return (
-    <div style={{ textAlign: `center` }}>
-    <Navbar/>
-    <TableContainer component={Paper} className={classes.tableCon}>
+    <>
+    {
+        <TableContainer component={Paper} className={classes.tableCon}>
         <Table className={classes.table} aria-label="simple table">
         <TableHead>
             <TableRow>
@@ -54,23 +46,46 @@ function Etc() {
         <TableBody>
             <TableRow>
                 <TableCell className={classes.tableCell1} >이미지</TableCell>
-                <TableCell className={classes.tableCell2} >{datas[0].img}</TableCell>
+                <TableCell className={classes.tableCell2} >미정</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell className={classes.tableCell1} >제품명</TableCell>
-                <TableCell className={classes.tableCell2} >{datas[0].item}</TableCell>
+                <TableCell className={classes.tableCell2} >{item.item}</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell className={classes.tableCell1} >분리수거가능여부</TableCell>
-                <TableCell className={classes.tableCell2} >{datas[0].isPossible}</TableCell>
+                <TableCell className={classes.tableCell2} >{item.isPossible}</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell className={classes.tableCell1} >비고</TableCell>
-                <TableCell className={classes.tableCell2} >{datas[0].explain}</TableCell>
+                <TableCell className={classes.tableCell2} >{item.explain}</TableCell>
             </TableRow>
         </TableBody>
         </Table>
     </TableContainer>
+    }
+    </>
+    );
+}
+
+
+const Etc = ({match}) => {
+    var param = match.params.item
+    var [item, setItem] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:3001/etc?item=' + param).then((Response)=>{
+            setItem(item = Response.data);
+            console.log(item)
+            }).catch((Error)=>{
+            console.log(Error);
+          })
+      },[]);
+
+    return (
+    <div style={{ textAlign: `center` }}>
+    <Navbar/>
+    {item && <Data item = {item}/>}
     </div>
     );
 }

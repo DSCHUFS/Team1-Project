@@ -31,7 +31,8 @@ ReactDOM.render(
     <Route exact path="/paper-cup" component={PaperCup} />
     <Route exact path="/plastic" component={Plastic} />
     <Route exact path="/plastic-bag" component={PlasticBag} />
-    <Route exact path="/etc" component={Etc} /> 
+    <Route exact path="/etc" component={Etc} />
+    <Route path= "/etc/:item" component={Etc} />
   </BrowserRouter>,
   document.getElementById('root')
 );
