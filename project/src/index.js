@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './pages/Main';
 import Search from './pages/Search';
-// import Battery from './pages/Battery';
+import Battery from './pages/Battery';
 import Can from './pages/Can';
-// import Electronics from './pages/Electronics';
-// import Fiber from './pages/Fiber';
+import Electronics from './pages/Electronics';
+import Fiber from './pages/Fiber';
 import Glass from './pages/Glass';
-// import Lamp from './pages/Lamp';
+import Lamp from './pages/Lamp';
 import Paper from './pages/Paper';
 import PaperCup from './pages/PaperCup';
 import Plastic from './pages/Plastic';
@@ -21,12 +21,12 @@ ReactDOM.render(
     <Route path='/' component={Main} exact/>
     <Route exact path="/search" component={Search} />
     <Route path = "/search/:state" component = {Search} />
-    {/* <Route exact path="/battery" component={Battery} /> */}
+    <Route exact path="/battery" component={Battery} />
     <Route exact path="/can" component={Can} />
-    {/* <Route exact path="/electronics" component={Electronics} /> */}
-    {/* <Route exact path="/fiber" component={Fiber} /> */}
+    <Route exact path="/electronics" component={Electronics} />
+    <Route exact path="/fiber" component={Fiber} />
     <Route exact path="/glass" component={Glass} />
-    {/* <Route exact path="/lamp" component={Lamp} /> */}
+    <Route exact path="/lamp" component={Lamp} />
     <Route exact path="/paper" component={Paper} />
     <Route exact path="/paper-cup" component={PaperCup} />
     <Route exact path="/plastic" component={Plastic} />

@@ -24,7 +24,7 @@ const styles = theme => ({
   backgroundColor: '#D7FBE8',
   //height: '1rem',
   textAlign: 'left',
-  fontWeight: 'bold'
+  textWeight: 'bold'
   },
   tablebody: {
   fontSize: '1rem',
@@ -44,24 +44,24 @@ class Subject extends Component {
 
 const customers = [
   {'id': '001',
-  'image': 'https://cdn.pixabay.com/photo/2014/08/08/22/02/garbage-413757_1280.jpg' ,
-  'name': '과자, 라면, 빵 봉지 등 모든 비닐',
-  'explanation': '비닐류로 배출'
+  'image': 'https://cdn.pixabay.com/photo/2011/04/03/13/31/iron-6046_1280.jpg' ,
+  'name': '소형폐가전 (컴퓨터, 전기밥솥, 선풍기, 다리미 등 1m 미만 가전제품)',
+  'explanation': '재활용품과 함께 배출. 동주민센터 및 아파트 내 비치된 전용수거함으로 배출'
   },
   {'id': '002',
-  'image': 'https://cdn.pixahttps://cdn.pixabay.com/photo/2016/02/06/21/56/bubble-wrap-1183728_1280.jpgbay.chttps://pixnio.com/free-images/food-and-drink/cartons-of-soy-milk.jpgom/photo/2014/09/16/14/13/booklet-448244_1280.jpg',
-  'name': '뽁뽁이',
-  'explanation': '비닐류로 배출',
+  'image': 'https://cdn.pixabay.com/photo/2015/08/23/01/57/washing-machine-902359_1280.jpg',
+  'name': '대형폐가전 (세탁기, 에어컨, 냉장고, TV 등 1m 이상 가전제품)',
+  'explanation': '대형폐가전 무상방문수거 서비스 이용',
   }
 ]
 
-class PlasticBag extends Component {
+class Electronics extends Component {
 render() {
 const { classes } = this.props;
 return ( 
 <div style={{ textAlign: `center` }}>
   <Navbar/>
-  <Subject title='비닐류'></Subject>
+  <Subject title='전자제품'></Subject>
     <Table className='table'>
         <TableHead>
             <TableRow className='row'>
@@ -82,4 +82,4 @@ return (
     }
 }
 
-export default withStyles(styles)(PlasticBag);
+export default withStyles(styles)(Electronics);

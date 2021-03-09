@@ -49,7 +49,7 @@ const customers = [
   'explanation': '내용물을 비운 뒤 일반 종이류와 혼합되지 않게 구분하여 배출. 단, 담배꽁초, 음식물 등 이물질이 있을 경우 일반 종량제 봉투로 배출하고 종이컵 분리배출함이 없는 경우 종이팩 분리배출함에 함께 배출'
   },
   {'id': '002',
-  'image': 'https://cdn.pixabay.chttps://pixnio.com/free-images/food-and-drink/cartons-of-soy-milk.jpgom/photo/2014/09/16/14/13/booklet-448244_1280.jpg',
+  'image': 'https://cdn.pixabay.com/photo/2014/12/21/23/37/egg-carton-575692_1280.png',
   'name': '종이팩',
   'explanation': '내용물을 비운 뒤 가급적 물로 헹군 후 압착하여 배출. 단, 종이팩 분리배출함이 없는 경우 다른 재활용품과 함께 배출',
   }
