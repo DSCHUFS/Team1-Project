@@ -31,7 +31,7 @@ const Search = ({match}) => {
       return (    
       <>{
         items.map((item,index) => (
-          <Link to='/etc' style={{ textDecoration: 'none' }}><Button variant="outlined" className={classes.button} size="large">{items[index].item}</Button></Link>
+          <Link to={item.link} style={{ textDecoration: 'none' }}><Button variant="outlined" className={classes.button} size="large">{items[index].item}</Button></Link>
         ))
       }</>
       );
