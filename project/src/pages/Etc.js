@@ -13,7 +13,7 @@ function Data({item}){
             border: '5px solid green',
         },
         tableCon: {
-            maxWidth: 1000,
+            maxWidth: 1200,
             margin: '50px auto',
         },
         tableCell1: {

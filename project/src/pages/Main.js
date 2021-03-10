@@ -82,7 +82,12 @@ function Main() {
       control: {
         padding: theme.spacing(2),
       },
-    }
+    },
+    media: {
+      height: 140,
+      width: 140,
+      padding: '10px'
+    },
   }));
 
   const classes = useStyles();
@@ -118,9 +123,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="종이류"
-                height="160"
                 image={PaperImg}
                 title="종이류"
+                className={classes.media}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -142,9 +147,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="종이컵/팩"
-                height="160"
                 image={PaperCupImg}
                 title="종이컵/팩"
+                className={classes.media}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -166,9 +171,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="캔/고철류"
-                height="160"
                 image={CanImg}
                 title="캔/고철류"
+                className={classes.media}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -193,9 +198,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="유리병류"
-                height="160"
                 image={GlassImg}
                 title="유리병류"
+                className={classes.media}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -217,9 +222,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="플라스틱류"
-                height="160"
                 image={PlasticImg}
                 title="플라스틱류"
+                className={classes.media}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h3">
@@ -241,9 +246,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="비닐류"
-                height="160"
                 image={PlasticBagImg}
                 title="비닐류"
+                className={classes.media}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -269,10 +274,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="형광등"
-                height="160"
                 image={LampImg}
                 title="형광등"
-                
+                className={classes.media}                
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -294,9 +298,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="전지류"
-                height="160"
                 image={BatteryImg}
                 title="전지류"
+                className={classes.media}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -318,9 +322,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="섬유류"
-                height="160"
                 image={FiberImg}
                 title="섬유류"
+                className={classes.media}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -342,9 +346,9 @@ function Main() {
               <CardMedia
                 component="img"
                 alt="전자제품"
-                height="160"
                 image={ElectronicsImg}
                 title="전자제품"
+                className={classes.media}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
