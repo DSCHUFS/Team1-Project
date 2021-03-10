@@ -44,24 +44,19 @@ class Subject extends Component {
 
 const customers = [
   {'id': '001',
-  'image': 'https://cdn.pixabay.com/photo/2014/08/08/22/02/garbage-413757_1280.jpg' ,
-  'name': '과자, 라면, 빵 봉지 등 모든 비닐',
-  'explanation': '비닐류로 배출'
-  },
-  {'id': '002',
-  'image': 'https://cdn.pixahttps://cdn.pixabay.com/photo/2016/02/06/21/56/bubble-wrap-1183728_1280.jpgbay.chttps://pixnio.com/free-images/food-and-drink/cartons-of-soy-milk.jpgom/photo/2014/09/16/14/13/booklet-448244_1280.jpg',
-  'name': '뽁뽁이',
-  'explanation': '비닐류로 배출',
+  'image': 'https://cdn.pixabay.com/photo/2016/04/15/17/33/batteries-1331493_1280.jpg' ,
+  'name': '건전지',
+  'explanation': '주요거점(동주민센터/아파트의 폐형광등/폐전지 일체함 또는 편의점, 아파트 동별 우편함 등)의 전용수거함에 배출'
   }
 ]
 
-class PlasticBag extends Component {
+class Battery extends Component {
 render() {
 const { classes } = this.props;
 return ( 
 <div style={{ textAlign: `center` }}>
   <Navbar/>
-  <Subject title='비닐류'></Subject>
+  <Subject title='건전지'></Subject>
     <Table className='table'>
         <TableHead>
             <TableRow className='row'>
@@ -82,4 +77,4 @@ return (
     }
 }
 
-export default withStyles(styles)(PlasticBag);
+export default withStyles(styles)(Battery);
