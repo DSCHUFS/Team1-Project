@@ -45,20 +45,16 @@ function Data({item}){
         </TableHead>
         <TableBody>
             <TableRow>
-                <TableCell className={classes.tableCell1} >이미지</TableCell>
-                <TableCell className={classes.tableCell2} >미정</TableCell>
-            </TableRow>
-            <TableRow>
                 <TableCell className={classes.tableCell1} >제품명</TableCell>
-                <TableCell className={classes.tableCell2} >{item.item}</TableCell>
+                <TableCell className={classes.tableCell2} >{item[0].item}</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell className={classes.tableCell1} >분리수거가능여부</TableCell>
-                <TableCell className={classes.tableCell2} >{item.isPossible}</TableCell>
+                <TableCell className={classes.tableCell2} >{item[0].isPossible}</TableCell>
             </TableRow>
             <TableRow>
                 <TableCell className={classes.tableCell1} >비고</TableCell>
-                <TableCell className={classes.tableCell2} >{item.explain}</TableCell>
+                <TableCell className={classes.tableCell2} >{item[0].explain}</TableCell>
             </TableRow>
         </TableBody>
         </Table>
@@ -71,7 +67,7 @@ function Data({item}){
 
 const Etc = ({match}) => {
     var param = match.params.item
-    var [item, setItem] = useState([])
+    var [item, setItem] = useState(null)
 
     useEffect(() => {
         axios.get('http://localhost:3001/etc?item=' + param).then((Response)=>{
