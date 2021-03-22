@@ -93,7 +93,7 @@ const Search = ({match}) => {
       </Paper>
           <h2>검색 결과가 존재하지 않습니다.</h2>
           <h3>헷갈리기 쉬운 분리배출 품목</h3>
-          {items && <Data items={items}/>}
+          <div style={{margin: 'auto 280px'}}>{items && <Data items={items}/>}</div>
         </div>
         );
     } else {
@@ -114,7 +114,7 @@ const Search = ({match}) => {
         </IconButton>
       </Paper>
           <h3>헷갈리기 쉬운 분리배출 품목</h3>
-          {items && <Data items={items}/>}        
+            <div style={{margin: 'auto 280px'}}>{items && <Data items={items}/>}</div>
         </div>
         );
     }

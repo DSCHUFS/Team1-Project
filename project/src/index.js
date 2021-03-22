@@ -15,8 +15,17 @@ import PlasticBag from './pages/PlasticBag';
 import Etc from './pages/Etc';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route } from 'react-router-dom';
+import './css/index.css';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: "Spoqa Han Sans"
+  },
+});
 
 ReactDOM.render(
+  <MuiThemeProvider theme={theme}>
   <BrowserRouter>
     <Route path='/' component={Main} exact/>
     <Route exact path="/search" component={Search} />
@@ -33,7 +42,8 @@ ReactDOM.render(
     <Route exact path="/plastic-bag" component={PlasticBag} />
     <Route exact path="/etc" component={Etc} />
     <Route path= "/etc/:item" component={Etc} />
-  </BrowserRouter>,
+  </BrowserRouter>
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
 reportWebVitals();
